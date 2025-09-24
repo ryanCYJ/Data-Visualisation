@@ -13,14 +13,16 @@
 
 <body>
     <div id="vis-map"></div>
+    <div id="vis-line"></div>
     <div id="vis-bar"></div>
     <div id="vis-stackbar"></div>
-    <script type="text/javascript">
+    <img src="/data/abc.png" style="width: 1000px;"/>
+    <script type="text/javascript"> 
 
         const mapSpec = {
             "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-            "width": 1500,
-            "height": 800,
+            "width": 1200,
+            "height": 600,
             "title": "Airplane Crashes from 2000 to 2025",
             "params": [
                 {
@@ -138,8 +140,8 @@
 
         const barSpec = {
             "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-            "width": 600,
-            "height": 600,
+            "width": 500,
+            "height": 500,
             "title": "Top 10 Number of Crashes by Operator",
             "data": { "url": "data/plane_crashes_2000_2025.csv" },
             "params": [
@@ -182,7 +184,7 @@
                     ],
                     "mark": {
                         "type": "bar",
-                        "size": 40,
+                        "size": 35,
                         "color": "#F08787",
                     },
                     "encoding": {
@@ -238,7 +240,7 @@
                         {
                             "mark": {
                                 "type": "text",
-                                "dx": 700,
+                                "dx": 600,
                                 "size": 10,
                                 "color": "#2d2d2d"
                             },
@@ -267,8 +269,8 @@
 
         const groupBarSpec = {
             "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-            "width": 600,
-            "height": 600,
+            "width": 300,
+            "height": 500,
             "title": "Comparsion of Total Aboard vs Fatalities for Passenger and Crew",
             "data": { "url": "data/plane_crashes_2000_2025.csv" },
             "params": [
@@ -308,7 +310,10 @@
                     "filter": "yearFilter == 'All' || datum.Year == yearFilter"
                 },
             ],
-            "mark": "bar",
+            "mark": {
+                "type": "bar",
+                "size": 35
+            },
             "encoding": {
                 "x": {
                     "field": "category",
@@ -332,9 +337,34 @@
             }
         }
 
+        const lineSpec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+            "width": 1200,
+            "height": 100,
+            "description": "Number of Airplane Crashes Over Time",
+            "data": {
+                "url": "data/plane_crashes_2000_2025.csv"
+            },
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "timeUnit": "year",
+                    "field": "Date",
+                    "type": "temporal",
+                    "title": "Year",
+                },
+                "y": {
+                    "aggregate": "count",
+                    "type": "quantitative",
+                    "title": "Number of Crashes",
+                }
+            }
+        }
+
         vegaEmbed('#vis-map', mapSpec);
         vegaEmbed('#vis-bar', barSpec);
         vegaEmbed('#vis-stackbar', groupBarSpec);
+        vegaEmbed('#vis-line', lineSpec)
     </script>
 </body>
 
