@@ -401,10 +401,13 @@ const heatmapSpec = {
     "background": "transparent",
     "data": { "url": "data/survival_rate.csv" },
     "transform": [
-        { "calculate": "toNumber(datum.SurvivalRate)", "as": "SurvivalRateNum" },
+        {
+            "calculate": "toNumber(datum.SurvivalRate)", "as": "SurvivalRateNum"
+        },
+        {
+            "calculate": "toNumber(datum.RowNumber)", "as": "RowNumberNum"
+        },
         // {
-        //   // SeatOrder: Left -> Window(0), Middle(1), Aisle(2)
-        //   //            Right -> Aisle(0), Middle(1), Window(2)
         //   "calculate":
         //     "datum.Side === 'Left' ? (datum.SeatType === 'Window' ? 0 : datum.SeatType === 'Middle' ? 1 : 2) : (datum.SeatType === 'Aisle' ? 0 : datum.SeatType === 'Middle' ? 1 : 2)",
         //   "as": "SeatOrder"
@@ -412,21 +415,41 @@ const heatmapSpec = {
     ],
     "facet": {
 
-        "row": { "field": "Side", "sort": ["Left", "Right"], "title": "Side" },
-        "column": { "field": "RowSection", "sort": ["Front", "Middle", "Back"], "title": "Section" },
+        "row": {
+            "field": "Side",
+            "sort": ["Left", "Right"],
+            "title": "Side"
+        },
+        "column": {
+            "field": "RowSection",
+            "sort": ["Front", "Middle", "Back"],
+            "title": "Section"
+        },
     },
     "spec": {
         "width": 300,
         "height": 150,
-        "mark": { "type": "rect", "cornerRadius": 5 },
+        "mark": {
+            "type": "rect",
+            "cornerRadius": 5
+        },
         "encoding": {
             "y": {
                 "field": "SeatType",
                 "type": "ordinal",
-                "axis": { "title": "Seat Type" }
+                "axis": { "title": "Seat Type" },
+                "sort": { "field": "SeatOrder" }
             },
-            "x": { "field": "RowNumber", "type": "ordinal", "axis": { "title": "Row" } },
-            "color": { "field": "SurvivalRateNum", "type": "quantitative", "scale": { "scheme": "greens" } },
+            "x": {
+                "field": "RowNumberNum",
+                "type": "ordinal",
+                "axis": { "title": "Row" }
+            },
+            "color": {
+                "field": "SurvivalRateNum",
+                "type": "quantitative",
+                "scale": { "scheme": "greens" }
+            },
             "tooltip": [
                 { "field": "RowSection", "title": "Section" },
                 { "field": "RowNumber", "title": "Row" },
