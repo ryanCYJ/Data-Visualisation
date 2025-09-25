@@ -1,5 +1,15 @@
-#vis-bar {
-  height: fit-content;
+.main {
+  position: relative;
+  width: 1400px;
+  height: 4000px;
+  padding: 1px;
+  background-color: #152542;
+}
+
+.first-section {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 50px;
 }
 
 .chart-wrapper {
@@ -104,8 +114,18 @@
   transition: top 0.5s ease;
 }
 
-.first-section {
-  display: flex;
-  flex-direction: row;
-  padding-bottom: 50px;
+.second-section {
+  position: relative;
+  width: 100%;
+}
+
+.plane {
+  position: relative;
+  width: 100%;
+}
+
+#plane-img {
+  position: absolute; 
+  left: 250px;
+  top: 250px; 
 }
