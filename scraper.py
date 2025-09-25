@@ -144,6 +144,7 @@ def scrape():
                     continue
                 label = cols[0].get_text(strip=True).replace(":", "")
                 value = cols[1].get_text(strip=True)
+                label = " ".join(label.split())
                 if label in FIELDS:
                     if label == "Time":
                         value = normalize_time(value)
@@ -171,12 +172,12 @@ def scrape():
             page += 1
             time.sleep(DELAY)
 
-    for crash in all_crashes:
-        if "Location" in crash and crash["Location"]:
-            lat, lon = geocode_location(crash["Location"])
-            crash["Latitude"] = lat
-            crash["Longitude"] = lon
-            time.sleep(DELAY)
+    # for crash in all_crashes:
+    #     if "Location" in crash and crash["Location"]:
+    #         lat, lon = geocode_location(crash["Location"])
+    #         crash["Latitude"] = lat
+    #         crash["Longitude"] = lon
+    #         time.sleep(DELAY)
 
     # Save all crashes to CSV
     df = pd.DataFrame(all_crashes)
