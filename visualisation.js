@@ -373,8 +373,8 @@ const groupBarSpec = {
 
 const lineSpec = {
     "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-    "width": 1200,
-    "height": 100,
+    "width": 700,
+    "height": 500,
     "background": "transparent",
     "description": "Number of Airplane Crashes Over Time",
     "data": {
@@ -427,8 +427,8 @@ const heatmapSpec = {
         },
     },
     "spec": {
-        "width": 300,
-        "height": 150,
+        "width": 200,
+        "height": 50,
         "mark": {
             "type": "rect",
             "cornerRadius": 5
@@ -458,8 +458,8 @@ const heatmapSpec = {
                 { "field": "SurvivalRateNum", "title": "Survival Rate" }
             ]
         }
-    },
-    "config": { "scale": { "bandPaddingInner": 0.2, "bandPaddingOuter": 0.05 } }
+    },  
+    "config": { "scale": { "bandPaddingInner": 0.1, "bandPaddingOuter": 0.01 } }
 };
 
 

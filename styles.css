@@ -4,6 +4,7 @@
   height: 4000px;
   padding: 1px;
   background-color: #152542;
+  z-index: 999;
 }
 
 .first-section {
@@ -15,6 +16,7 @@
 .chart-wrapper {
   display: flex;
   flex-direction: row;
+  z-index: inherit;
 }
 
 .vega-bindings {
@@ -120,12 +122,31 @@
 }
 
 .plane {
-  position: relative;
+  position: absolute;
   width: 100%;
+  transform: rotateZ(70deg);
+  left: 1200px;
+  z-index: -100;
 }
 
 #plane-img {
   position: absolute; 
-  left: 250px;
+  left: -500px;
   top: 250px; 
+  scale: 0.7;
+}
+
+#vis-heatmap {
+  position: absolute;
+  transform: rotateZ(90deg);
+  top: 1150px;
+  left: -51px;
+}
+
+#vis-line {
+  position: absolute;
+  top: 600px;
+  left: 500px;
+  background: rgba(25, 95, 62, 0.95);
+
 }
