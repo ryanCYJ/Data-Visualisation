@@ -374,7 +374,7 @@ const groupBarSpec = {
 const lineSpec = {
     "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
     "width": 700,
-    "height": 500,
+    "height": 400,
     "background": "transparent",
     "description": "Number of Airplane Crashes Over Time",
     "data": {
@@ -407,11 +407,11 @@ const heatmapSpec = {
         {
             "calculate": "toNumber(datum.RowNumber)", "as": "RowNumberNum"
         },
-        // {
-        //   "calculate":
-        //     "datum.Side === 'Left' ? (datum.SeatType === 'Window' ? 0 : datum.SeatType === 'Middle' ? 1 : 2) : (datum.SeatType === 'Aisle' ? 0 : datum.SeatType === 'Middle' ? 1 : 2)",
-        //   "as": "SeatOrder"
-        // }
+        {
+          "calculate":
+            "datum.Side === 'Left' ? (datum.SeatType === 'Window' ? 0 : datum.SeatType === 'Middle' ? 1 : 2) : (datum.SeatType === 'Aisle' ? 0 : datum.SeatType === 'Middle' ? 1 : 2)",
+          "as": "SeatOrder"
+        }
     ],
     "facet": {
 
