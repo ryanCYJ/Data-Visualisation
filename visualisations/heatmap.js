@@ -1,8 +1,5 @@
 import { HEATMAP_HEIGHT, HEATMAP_WIDTH } from './constants.js';
 
-
-
-
 const heatmapLeft = {
     "transform": [
         {
@@ -54,7 +51,12 @@ const heatmapLeft = {
             "color": {
                 "field": "SurvivalRateNum",
                 "type": "quantitative",
-                "scale": { "scheme": "greens" }
+                "scale": {
+                    "scheme": "greens"
+                },
+                "legend": {
+                    "title": ["Survival", "Rate"],
+                }
             },
             "tooltip": [
                 { "field": "RowSection", "title": "Section" },
@@ -119,7 +121,12 @@ const heatmapRight = {
             "color": {
                 "field": "SurvivalRateNum",
                 "type": "quantitative",
-                "scale": { "scheme": "greens" }
+                "scale": {
+                    "scheme": "greens"
+                },
+                "legend": {
+                    "title": ["Survival", "Rate"],
+                }
             },
             "tooltip": [
                 { "field": "RowSection", "title": "Section" },
@@ -130,7 +137,6 @@ const heatmapRight = {
             ]
         }
     },
-    // "config": { "scale": { "bandPaddingInner": 0.1, "bandPaddingOuter": 0.2 } }
 };
 
 export const heatmapSpec = {
@@ -146,13 +152,21 @@ export const heatmapSpec = {
         },
     ],
     "vconcat": [heatmapRight, heatmapLeft],
-    "config": { 
-        "scale": { 
-            "bandPaddingInner": 0.1, 
-            "bandPaddingOuter": 0 
-        } ,
+    "config": {
+        "scale": {
+            "bandPaddingInner": 0.1,
+            "bandPaddingOuter": 0
+        },
         "view": {
             "stroke": null
+        },
+        "legend": {
+            "titleFontSize": 20,
+            "labelFontSize": 16,
+            "orient": "none",
+            "legendX": 1020,
+            "legendY": 30,
+            "direction": "horizontal",
         }
     }
 };

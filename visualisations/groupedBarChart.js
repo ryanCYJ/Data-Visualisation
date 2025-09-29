@@ -22,6 +22,10 @@ export const groupBarSpec = {
             "as": ["category", "value"]
         },
         {
+            "calculate": "round(datum.value)",
+            "as": "value"
+        },
+        {
             "calculate": "if(indexof(datum.category, 'Passengers') >= 0, 'Passenger', 'Crew')",
             "as": "group"
         },
@@ -36,6 +40,12 @@ export const groupBarSpec = {
         {
             "filter": "yearFilter == 'All' || datum.Year == yearFilter"
         },
+        {
+            "aggregate": [
+                { "op": "sum", "field": "value", "as": "total" }
+            ],
+            "groupby": ["category", "group"]
+        }
     ],
     "mark": {
         "type": "bar",
@@ -52,19 +62,28 @@ export const groupBarSpec = {
             "field": "group",
         },
         "y": {
-            "field": "value",
+            "field": "total",
             "type": "quantitative",
-            "title": "Number of People"
+            "title": "Number of People",
         },
         "color": {
             "field": "group",
-            "legend": { 
+            "legend": {
                 "title": "Role",
                 "orient": "none",
                 "direction": "vertical",
                 "legendX": BAR_LEGEND_X,
-                "legendY": BAR_LEGEND_Y,}
+                "legendY": BAR_LEGEND_Y,
+            }
 
-        }
+        },
+        "tooltip": [
+            {
+                "field": "group", "title": "Role"
+            },
+            {
+                "field": "total", "title": "Number of People"
+            }
+        ]
     }
 }

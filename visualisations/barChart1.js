@@ -7,10 +7,6 @@ export const barSpec1 = {
     "height": BAR_HEIGHT,
     "title": {
         "text": "Top 10 Number of Crashes by Operator",
-        // // "anchor": "start",
-        // "baseline": "top",
-        // "dx": 0,
-        // "dy": -20
     },
     "transform": [
         {
@@ -113,7 +109,7 @@ export const barSpec1 = {
                         "type": "text",
                         "dx": 0,
                         "dy": -20,
-                        "size": 7,
+                        "size": 9,
                         "color": "#aaaaaa"
                     },
                     "encoding": {
