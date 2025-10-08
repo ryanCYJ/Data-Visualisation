@@ -4,7 +4,10 @@ export const lineSpec = {
     "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
     "width": LINE_WIDTH,
     "height": LINE_HEIGHT,
-    "title": "Annual Plane Crashes and 5 Year Trend",
+    "title": {
+        "text": "Annual Plane Crashes and 5 Year Trend",
+        "fontSize": 24,
+    },
     "background": "transparent",
     "data": {
         "url": "https://raw.githubusercontent.com/ryanCYJ/Data-Visualisation/refs/heads/main/data/plane_crashes_2000_2025.csv"
@@ -57,7 +60,10 @@ export const lineSpec = {
     },
     "layer": [
         {
-            "mark": "bar",
+            "mark": 
+            {
+                "type": "bar",
+            },
             "encoding": {
                 "y": {
                     "field": "crash_no",

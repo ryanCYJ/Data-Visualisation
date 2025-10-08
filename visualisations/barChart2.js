@@ -5,9 +5,6 @@ export const barSpec2 = {
     "height": BAR_HEIGHT,
     "title": {
         "text": "Top 10 Number of Crashes by Airplane Type",
-        // "anchor": "start",
-        // "baseline": "top",
-        // "dx": 0,
         "dy": -24
     },
     "transform": [
@@ -57,7 +54,7 @@ export const barSpec2 = {
                 "type": "bar",
                 "size": BAR_SIZE,
                 "yOffset": 1,
-                "color": "#F08787",
+                "color": "#b0c1f0ff",
             },
             "encoding": {
                 "tooltip": [
@@ -72,7 +69,6 @@ export const barSpec2 = {
                 "align": "left",
                 "baseline": "middle",
                 "dx": 3,
-                // "dy": -15,
             },
             "encoding": {
                 "x": {

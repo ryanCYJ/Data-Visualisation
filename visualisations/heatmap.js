@@ -10,7 +10,7 @@ const heatmapLeft = {
         "column": {
             "field": "RowSection",
             "sort": ["Front", "Middle", "Back"],
-            "title": false,
+            "title": null,
             "header": {
                 "labels": false,
             }
@@ -20,52 +20,55 @@ const heatmapLeft = {
     "spec": {
         "width": HEATMAP_WIDTH,
         "height": HEATMAP_HEIGHT,
-        "mark": {
-            "type": "rect",
-            "cornerRadius": 5
-        },
-        "encoding": {
-            "y": {
-                "field": "SeatType",
-                "type": "ordinal",
-                "axis": {
-                    "labels": false,
-                    "title": false,
-                    "domain": false,
-                    "grid": false,
-                    "ticks": false
+        "layer": [
+            {
+                "mark": {
+                    "type": "rect",
+                    "cornerRadius": 5
                 },
-                "sort": ["Aisle", "Middle", "Window"],
-            },
-            "x": {
-                "field": "RowNumberNum",
-                "type": "ordinal",
-                "axis": {
-                    "labels": false,
-                    "title": false,
-                    "domain": false,
-                    "grid": false,
-                    "ticks": false
-                },
-            },
-            "color": {
-                "field": "SurvivalRateNum",
-                "type": "quantitative",
-                "scale": {
-                    "scheme": "greens"
-                },
-                "legend": {
-                    "title": ["Survival", "Rate"],
+                "encoding": {
+                    "y": {
+                        "field": "SeatType",
+                        "type": "ordinal",
+                        "axis": {
+                            "labels": false,
+                            "title": null,
+                            "domain": false,
+                            "grid": false,
+                            "ticks": false
+                        },
+                        "sort": ["Aisle", "Middle", "Window"],
+                    },
+                    "x": {
+                        "field": "RowNumberNum",
+                        "type": "ordinal",
+                        "axis": {
+                            "labels": false,
+                            "title": null,
+                            "domain": false,
+                            "grid": false,
+                            "ticks": false
+                        },
+                    },
+                    "color": {
+                        "field": "SurvivalRateNum",
+                        "type": "quantitative",
+                        "scale": {
+                            "scheme": "greens"
+                        },
+                        "legend": null
+                    },
+                    "tooltip": [
+                        { "field": "RowSection", "title": "Section" },
+                        { "field": "RowNumber", "title": "Row" },
+                        { "field": "SeatType", "title": "Seat Type" },
+                        { "field": "Side", "title": "Side" },
+                        { "field": "SurvivalRateNum", "title": "Survival Rate" }
+                    ]
                 }
-            },
-            "tooltip": [
-                { "field": "RowSection", "title": "Section" },
-                { "field": "RowNumber", "title": "Row" },
-                { "field": "SeatType", "title": "Seat Type" },
-                { "field": "Side", "title": "Side" },
-                { "field": "SurvivalRateNum", "title": "Survival Rate" }
-            ]
-        }
+            }
+        ],
+
     },
 };
 
@@ -80,7 +83,7 @@ const heatmapRight = {
         "column": {
             "field": "RowSection",
             "sort": ["Front", "Middle", "Back"],
-            "title": false,
+            "title": null,
             "header": {
                 "labels": false,
             }
@@ -90,52 +93,54 @@ const heatmapRight = {
     "spec": {
         "width": HEATMAP_WIDTH,
         "height": HEATMAP_HEIGHT,
-        "mark": {
-            "type": "rect",
-            "cornerRadius": 5
-        },
-        "encoding": {
-            "y": {
-                "field": "SeatType",
-                "type": "ordinal",
-                "axis": {
-                    "labels": false,
-                    "title": false,
-                    "domain": false,
-                    "grid": false,
-                    "ticks": false
+        "layer": [
+            {
+                "mark": {
+                    "type": "rect",
+                    "cornerRadius": 5
                 },
-                "sort": ["Window", "Middle", "Aisle"],
-            },
-            "x": {
-                "field": "RowNumberNum",
-                "type": "ordinal",
-                "axis": {
-                    "labels": false,
-                    "title": false,
-                    "domain": false,
-                    "grid": false,
-                    "ticks": false
+                "encoding": {
+                    "y": {
+                        "field": "SeatType",
+                        "type": "ordinal",
+                        "axis": {
+                            "labels": false,
+                            "title": null,
+                            "domain": false,
+                            "grid": false,
+                            "ticks": false
+                        },
+                        "sort": ["Window", "Middle", "Aisle"],
+                    },
+                    "x": {
+                        "field": "RowNumberNum",
+                        "type": "ordinal",
+                        "axis": {
+                            "labels": false,
+                            "title": null,
+                            "domain": false,
+                            "grid": false,
+                            "ticks": false
+                        }
+                    },
+                    "color": {
+                        "field": "SurvivalRateNum",
+                        "type": "quantitative",
+                        "scale": {
+                            "scheme": "greens"
+                        },
+                        "legend": null
+                    },
+                    "tooltip": [
+                        { "field": "RowSection", "title": "Section" },
+                        { "field": "RowNumber", "title": "Row" },
+                        { "field": "SeatType", "title": "Seat Type" },
+                        { "field": "Side", "title": "Side" },
+                        { "field": "SurvivalRateNum", "title": "Survival Rate" }
+                    ]
                 }
             },
-            "color": {
-                "field": "SurvivalRateNum",
-                "type": "quantitative",
-                "scale": {
-                    "scheme": "greens"
-                },
-                "legend": {
-                    "title": ["Survival", "Rate"],
-                }
-            },
-            "tooltip": [
-                { "field": "RowSection", "title": "Section" },
-                { "field": "RowNumber", "title": "Row" },
-                { "field": "SeatType", "title": "Seat Type" },
-                { "field": "Side", "title": "Side" },
-                { "field": "SurvivalRateNum", "title": "Survival Rate" }
-            ]
-        }
+        ]
     },
 };
 
@@ -159,14 +164,6 @@ export const heatmapSpec = {
         },
         "view": {
             "stroke": null
-        },
-        "legend": {
-            "titleFontSize": 20,
-            "labelFontSize": 16,
-            "orient": "none",
-            "legendX": 1020,
-            "legendY": 30,
-            "direction": "horizontal",
         }
     }
 };

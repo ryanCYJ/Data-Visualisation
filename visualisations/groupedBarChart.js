@@ -6,9 +6,6 @@ export const groupBarSpec = {
     "height": BAR_HEIGHT,
     "title": {
         "text": "Comparsion of Total Aboard vs Fatalities",
-        // "anchor": "start",
-        // "baseline": "top",
-        // "dx": 0,
         "dy": -24
     },
     "transform": [
@@ -68,6 +65,9 @@ export const groupBarSpec = {
         },
         "color": {
             "field": "group",
+            "scale": {
+                "range": ["#819ff3ff", "#c77f74ff"],
+            },
             "legend": {
                 "title": "Role",
                 "orient": "none",

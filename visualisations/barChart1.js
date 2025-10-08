@@ -60,7 +60,7 @@ export const barSpec1 = {
                         "type": "bar",
                         "size": BAR_SIZE,
                         "yOffset": 1,
-                        "color": "#F08787",
+                        "color": "#b0c1f0ff",
                     },
                     "encoding": {
                         "tooltip": [
@@ -75,7 +75,6 @@ export const barSpec1 = {
                         "align": "left",
                         "baseline": "middle",
                         "dx": 3,
-                        "zindex": 999,
                     },
                     "encoding": {
                         "x": {
@@ -94,7 +93,7 @@ export const barSpec1 = {
                         "type": "rule",
                         "strokeWidth": 1,
                         "strokeDash": [8, 8],
-                        "color": "#aaaaaa"
+                        "color": "#525252ff"
                     },
                     "encoding": {
                         "x": {
@@ -110,7 +109,7 @@ export const barSpec1 = {
                         "dx": 0,
                         "dy": -20,
                         "size": 9,
-                        "color": "#aaaaaa"
+                        "color": "#525252ff"
                     },
                     "encoding": {
                         "y": { "value": 0 },

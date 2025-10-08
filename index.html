@@ -8,112 +8,25 @@
     <script src="https://cdn.jsdelivr.net/npm/vega@6"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@6"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Fira+Mono:wght@400;500;700&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
-    </style>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <div class="main">
         <div class="title">
+            <img src="data/plane_icon.svg">
             Plane Crashes from 2000 to 2025
         </div>
         <div class="content">
             <div class="first-section">
-                <div class="timeline">
-                    <div class="timeline-item" data-time="All">
-                        <div class="dot"></div>
-                    </div>
-                    <div class="timeline-item" data-time="2025">
-                        <div class="dot"></div>
-                    </div>
-                    <div class="timeline-item" data-time="2024">
-                        <div class="dot"></div>
-                    </div>
-                    <div class="timeline-item" data-time="2023">
-                        <div class="dot"></div>
-                    </div>
-                    <div class="timeline-item" data-time="2022">
-                        <div class="dot"></div>
-                    </div>
-                    <div class="timeline-item" data-time="2021">
-                        <div class="dot"></div>
-                    </div>
-                    <div class="timeline-item" data-time="2020">
-                        <div class="dot"></div>
-                    </div>
-                    <div class="timeline-item" data-time="2019">
-                        <div class="dot"></div>
-                    </div>
-                    <div class="timeline-item" data-time="2018">
-                        <div class="dot"></div>
-                    </div>
-                    <div class="timeline-item" data-time="2017">
-                        <div class="dot"></div>
-                    </div>
-                    <div class="timeline-item" data-time="2016">
-                        <div class="dot"></div>
-                    </div>
-                    <div class="timeline-item" data-time="2015">
-                        <div class="dot"></div>
-                    </div>
-                    <div class="timeline-item" data-time="2014">
-                        <div class="dot"></div>
-                    </div>
-                    <div class="timeline-item" data-time="2013">
-                        <div class="dot"></div>
-                    </div>
-                    <div class="timeline-item" data-time="2012">
-                        <div class="dot"></div>
-                    </div>
-                    <div class="timeline-item" data-time="2011">
-                        <div class="dot"></div>
-                    </div>
-                    <div class="timeline-item" data-time="2010">
-                        <div class="dot"></div>
-                    </div>
-                    <div class="timeline-item" data-time="2009">
-                        <div class="dot"></div>
-                    </div>
-                    <div class="timeline-item" data-time="2008">
-                        <div class="dot"></div>
-                    </div>
-                    <div class="timeline-item" data-time="2007">
-                        <div class="dot"></div>
-                    </div>
-                    <div class="timeline-item" data-time="2006">
-                        <div class="dot"></div>
-                    </div>
-                    <div class="timeline-item" data-time="2005">
-                        <div class="dot"></div>
-                    </div>
-                    <div class="timeline-item" data-time="2004">
-                        <div class="dot"></div>
-                    </div>
-                    <div class="timeline-item" data-time="2003">
-                        <div class="dot"></div>
-                    </div>
-                    <div class="timeline-item" data-time="2002">
-                        <div class="dot"></div>
-                    </div>
-                    <div class="timeline-item" data-time="2001">
-                        <div class="dot"></div>
-                    </div>
-                    <div class="timeline-item" data-time="2000">
-                        <div class="dot"></div>
-                    </div>
-                    <img id="indicator" src="data/plane_icon.svg">
-                </div>
-                <div id="vis-bar"></div>
                 <div class="annotation-container">
-                    <p id="annotation-title">2000 to 2025</p>
+                    <p id="annotation-title">During 2000 to 2025 ...</p>
                     <div id="annotation-text">
                         <p>There are a total of <span class="text-emp">810</span> recorded plane crashes.</p>
                         <p><span class="text-emp">42%</span> of these crashes are <span
                                 class="text-emp">commercial</span> planes, <span class="text-emp">16%</span> are <span
                                 class="text-emp">military</span>, and <span class="text-emp">42%</span> are <span
-                                class="text-emp">private/others</span>.</p>
+                                class="text-emp">private / others</span>.</p>
                         <p>There is a total of <span class="text-emp">17</span> midair collisions.</p>
                         <p>The deadliest year was <span class="text-emp">2000</span>, with <span
                                 class="text-emp">1430</span> fatalities from <span class="text-emp">63</span> crashes.
@@ -125,13 +38,144 @@
                             killing all <span class="text-emp">298</span> people onboard.</p>
                     </div>
                 </div>
-
+                <div id="chart-content">
+                    <div id="vis-bar"></div>
+                    <div class="timeline">
+                        <div class="timeline-item" data-time="All">
+                            <div class="dot"></div>
+                        </div>
+                        <div class="timeline-item" data-time="2025">
+                            <div class="dot"></div>
+                        </div>
+                        <div class="timeline-item" data-time="2024">
+                            <div class="dot"></div>
+                        </div>
+                        <div class="timeline-item" data-time="2023">
+                            <div class="dot"></div>
+                        </div>
+                        <div class="timeline-item" data-time="2022">
+                            <div class="dot"></div>
+                        </div>
+                        <div class="timeline-item" data-time="2021">
+                            <div class="dot"></div>
+                        </div>
+                        <div class="timeline-item" data-time="2020">
+                            <div class="dot"></div>
+                        </div>
+                        <div class="timeline-item" data-time="2019">
+                            <div class="dot"></div>
+                        </div>
+                        <div class="timeline-item" data-time="2018">
+                            <div class="dot"></div>
+                        </div>
+                        <div class="timeline-item" data-time="2017">
+                            <div class="dot"></div>
+                        </div>
+                        <div class="timeline-item" data-time="2016">
+                            <div class="dot"></div>
+                        </div>
+                        <div class="timeline-item" data-time="2015">
+                            <div class="dot"></div>
+                        </div>
+                        <div class="timeline-item" data-time="2014">
+                            <div class="dot"></div>
+                        </div>
+                        <div class="timeline-item" data-time="2013">
+                            <div class="dot"></div>
+                        </div>
+                        <div class="timeline-item" data-time="2012">
+                            <div class="dot"></div>
+                        </div>
+                        <div class="timeline-item" data-time="2011">
+                            <div class="dot"></div>
+                        </div>
+                        <div class="timeline-item" data-time="2010">
+                            <div class="dot"></div>
+                        </div>
+                        <div class="timeline-item" data-time="2009">
+                            <div class="dot"></div>
+                        </div>
+                        <div class="timeline-item" data-time="2008">
+                            <div class="dot"></div>
+                        </div>
+                        <div class="timeline-item" data-time="2007">
+                            <div class="dot"></div>
+                        </div>
+                        <div class="timeline-item" data-time="2006">
+                            <div class="dot"></div>
+                        </div>
+                        <div class="timeline-item" data-time="2005">
+                            <div class="dot"></div>
+                        </div>
+                        <div class="timeline-item" data-time="2004">
+                            <div class="dot"></div>
+                        </div>
+                        <div class="timeline-item" data-time="2003">
+                            <div class="dot"></div>
+                        </div>
+                        <div class="timeline-item" data-time="2002">
+                            <div class="dot"></div>
+                        </div>
+                        <div class="timeline-item" data-time="2001">
+                            <div class="dot"></div>
+                        </div>
+                        <div class="timeline-item" data-time="2000">
+                            <div class="dot"></div>
+                        </div>
+                        <img id="indicator" src="data/plane_icon.svg">
+                    </div>
+                </div>
             </div>
             <div class="second-section">
-                <p id="heatmap-title">Surival Rate by Seating Location</p>
+                <p id="heatmap-title">Where to sit on an airplane?</p>
+                <div id="helper">Note: The darker the green the higher the survival rate.</div>
                 <div class="plane">
                     <img id="plane-img" src="data/plane.svg">
                     <div id="vis-heatmap"></div>
+                </div>
+                <div class="second-section-annotations">
+                    <div id="annotation1">
+                        <p><span class="main-percent">62%</span> surival rate<br>in the <span
+                                class="section-caption">front</span> section</p>
+                    </div>
+                    <div id="line1">
+                    </div>
+                    <div id="annotation2">
+                        <p><span class="main-percent">61%</span> surival rate<br>in the
+                            <span class="seat-caption">Window</span> and <span class="seat-caption">Middle</span>
+                            seat<br>of
+                            the <span class="section-caption">Middle</span> section
+                        </p>
+                    </div>
+                    <div id="line2">
+                    </div>
+                    <div id="annotation3">
+                        <p><span class="main-percent">68%</span> surival rate<br>in the
+                            <span class="seat-caption">Window</span> and <span class="seat-caption">aisle</span>
+                            seat<br>of
+                            the <span class="section-caption">Back</span> section
+                        </p>
+                    </div>
+                    <div id="line3">
+                    </div>
+                    <div id="annotation4">
+                        <p><span id="dangerous-area">56%</span> surival rate<br>in the
+                            <span class="seat-caption">Middle</span>
+                            seat<br>of
+                            the <span class="section-caption">Middle</span> section
+                        </p>
+                    </div>
+                    <div id="line4">
+                    </div>
+                    <div id="annotation5">
+                        <p><span id="safest-area">72%</span> surival rate<br>in the
+                            <span class="seat-caption">Middle</span>
+                            seat<br>of
+                            the <span class="section-caption">Back</span> section
+                        </p>
+                    </div>
+                    <div id="line5">
+                    </div>
                 </div>
             </div>
             <div class="third-section">
@@ -139,17 +183,21 @@
                 <div class="line-desc">
                     <p>
                         Even with more flights than ever, the number of crashes since 2000 has reduced drastically.
-                        The <span class="text-emp">5 year rolling average</span> of crashes has
+                        The <span class="text-emp">5 year rolling average</span> has
                         <span class="text-emp">dropped</span> from more than
-                        <span class="text-emp">50</span> to under <span class="text-emp">10</span>.
+                        <span class="text-emp">50</span> crashes in 2000 to under <span class="text-emp">10</span>
+                        crashes in 2025.
                     </p>
                 </div>
             </div>
+            <div class="fourth-section">
+                <p>Author: Ryan Choo</p>
+                <p>Data source: <a href="https://www.planecrashinfo.com/">PlaneCrashInfo</a> and <a
+                        href="https://time.com/3934663/safest-seat-airplane/">TIME</a></p>
+                </p>
+            </div>
         </div>
     </div>
-
-
-
 
     <script type="module" src="visualisation.js"></script>
     <script src="radio.js"></script>

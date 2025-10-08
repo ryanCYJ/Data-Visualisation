@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Bree+Serif&display=swap');
+
 body {
   font-family: "Aldrich", sans-serif;
 }
@@ -15,45 +17,85 @@ p {
   width: 100%;
   flex-direction: column;
   align-items: center;
-  padding: 50px 0px
-  /* z-index: 999; */
+  padding-bottom: 50px;
 }
 
 .title {
   text-align: center;
-  font-size: 32px;
+  font-family: "Bree Serif", serif;
+  font-size: 40px;
   font-weight: bold;
-  width: 1400px;
-  /* background-color: antiquewhite; */
+  width: 1200px;
+  padding: 10px 0;
+  background-color: rgb(255, 255, 255);
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  row-gap: 50px;
-  width: 1400px;
-  margin-top: 30px;
-  /* background-color: aliceblue; */
+  row-gap: 30px;
+  width: 1200px;
 }
 
 .first-section {
   display: flex;
   height: 100%;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.annotation-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  padding-bottom: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#annotation-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#annotation-text {
+  display: flex;
+  height: 100%;
   flex-direction: row;
-  /* background-color: aqua; */
+  gap: 40px;
+  font-size: 14px;
+  align-items: top;
+  justify-content: center;
+}
+
+#annotation-text p {
+  border-left: 1px solid black;
+  min-width: 100px;
+  padding-left: 10px;
+}
+
+#chart-content {
+  display: flex;
+  flex-direction: row;
 }
 
 .chart-wrapper {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   z-index: inherit;
 }
 
 .vega-bindings {
-  width: 60px;
+  margin-left: 10px;
 }
 
-.vega-bindings, label {
+.vega-bindings,
+label {
   font-size: 14px;
   color: #2d2d2d;
 }
@@ -74,7 +116,7 @@ p {
 .vega-bind-radio {
   display: flex;
   height: 100%;
-  flex-direction: column; 
+  flex-direction: column;
   justify-content: space-between;
   margin: 5px 0;
 }
@@ -96,7 +138,7 @@ p {
 }
 
 .vega-bindings label:hover {
-  background-color: #f9c2c2;
+  background-color: #aaaaaa;
 }
 
 .vega-bindings form {
@@ -106,7 +148,7 @@ p {
 }
 
 .vega-bindings label:has(input[type="radio"]:checked) {
-  background-color: #ff6b6b;
+  background-color: #000000;
   color: white;
 }
 
@@ -117,29 +159,17 @@ p {
   justify-content: space-between;
   position: relative;
   border-right: 2px solid #888;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 40px;
+  left: -30px;
+  margin-top: 28px;
   margin-bottom: 15px;
-  /* height: 653px; */
 }
 
 .timeline-item {
   position: relative;
 }
 
-/* .dot {
-  position: absolute;
-  left: -2.5px;
-  width: 7px;
-  height: 7px;
-  background-color: #ebb1b1;  
-  border-radius: 50%;
-} */
-
 #indicator {
   position: absolute;
-  color: #b03838;
   left: -15px;
   transition: top 0.8s ease, transform 0.1s ease;
   transform-origin: center;
@@ -149,14 +179,14 @@ p {
   display: flex;
   height: 600px;
   flex-direction: column;
-  /* background-color: thistle; */
-  /* z-index: -1; */
+  padding: 15px 5px;
+  background-color: rgb(255, 255, 255);
   overflow: hidden;
 }
 
-#heatmap-title {  
+#heatmap-title {
   margin-left: 40px;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
 }
 
@@ -165,54 +195,158 @@ p {
   width: 100%;
   transform: rotateZ(-90deg);
   scale: 0.7;
-  left: -50%;
-  top: 425px;
-  /* z-index: -2; */
+  left: -690px;
+  top: 485px;
 }
 
 #plane-img {
-  position: absolute; 
+  position: absolute;
   scale: 0.8;
 }
 
 #vis-heatmap {
   position: absolute;
-  transform: rotateZ(90deg);  
-  left: 343px;
-  top: 875px;
+  transform: rotateZ(90deg);
+  left: 422px;
+  top: 855px;
 }
 
-.annotation-container {
+.second-section-annotations {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: left;
-  text-align: center;
-  padding-top: 40px;
-  padding-right: 20px;
-  padding-bottom: 40px;
-  /* background-color: #b03838; */
+  width: 100%;
 }
 
-#annotation-title {
-  font-size: 20px;
-  text-decoration: underline;
+.second-section-annotations div {
+  position: absolute;
 }
 
-#annotation-text {
-  margin-top: 20px;
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-  font-size: 14px;
-  justify-content: space-between;
+.second-section-annotations div p {
+  font-size: 12px;
+}
+
+.second-section-annotations hr {
+  color: #000000;
+  position: absolute;
+}
+
+#helper {
+  font-size: 12px;
+  margin-left: 40px;
+}
+
+.main-percent {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.section-caption {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.seat-caption {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+#annotation1 {
+  left: 40px;
+  top: 15px;
+  background: rgba(243, 243, 243, 0.9);
+  padding: 10px;
+}
+
+#line1 {
+  left: 170px;
+  top: 140px;
+  width: 90px;
+  transform: rotateZ(70deg);
+  background-color: #adadad;
+  border: none;
+  height: 2px;
+}
+
+#annotation2 {
+  left: 350px;
+  top: 15px;
+  background: rgba(243, 243, 243, 0.9);
+  padding: 10px;
+}
+
+#line2 {
+  left: 450px;
+  top: 145px;
+  width: 70px;
+  transform: rotateZ(70deg);
+  background-color: #8f8f8f;
+  height: 2px;
+}
+
+#annotation3 {
+  left: 750px;
+  top: 15px;
+  background: rgba(243, 243, 243, 0.9);
+  padding: 10px;
+}
+
+#line3 {
+  left: 800px;
+  top: 150px;
+  width: 70px;
+  transform: rotateZ(-80deg);
+  background-color: #8f8f8f;
+  height: 2px;
+}
+
+#annotation4 {
+  left: 150px;
+  top: 390px;
+  background: rgba(243, 243, 243, 0.9);
+  padding: 10px;
+}
+
+#line4 {
+  left: 310px;
+  top: 325px;
+  width: 170px;
+  transform: rotateZ(-60deg);
+  background-color: #8f8f8f;
+  height: 2px;
+}
+
+#annotation5 {
+  left: 750px;
+  top: 390px;
+  background: rgba(243, 243, 243, 0.9);
+  padding: 10px;
+}
+
+#line5 {
+  left: 705px;
+  top: 325px;
+  width: 130px;
+  transform: rotateZ(60deg);
+  background-color: #8f8f8f;
+  height: 2px;
+}
+
+#safest-area {
+  font-size: 40px;
+  font-weight: bold;
+  color: #238649;
+}
+
+#dangerous-area {
+  font-size: 40px;
+  font-weight: bold;
+  color: #862323;
 }
 
 .third-section {
   display: flex;
   flex-direction: row;
-  /* background-color:azure; */
+  padding: 15px 5px;
+  background-color: rgb(255, 255, 255);
 }
 
 .line-desc {
@@ -226,4 +360,8 @@ p {
 .text-emp {
   font-size: 15px;
   font-weight: bold;
+}
+
+.fourth-section {
+  background-color: rgb(255, 255, 255, 0.5);
 }
