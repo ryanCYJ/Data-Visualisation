@@ -90,10 +90,10 @@ export const mapSpec = {
                     "type": "quantitative"
                 },
                 "size": {
-                    "bin": { "step": 50 },
+                    "bin": { "step": 100 },
                     "field": "Fatalities Total",
                     "type": "quantitative",
-                    "scale": { "range": [10, 100] },
+                    "scale": { "range": [20, 100] },
                     "legend": {
                         "title": "Total Fatalities",
                         "orient": "none",
