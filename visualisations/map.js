@@ -11,25 +11,25 @@ export const mapSpec = {
         "type": "equirectangular",
     },
     "layer": [
-        // {
-        //     "data": {
-        //         "url": "https://raw.githubusercontent.com/ryanCYJ/Data-Visualisation/refs/heads/main/data/ne_50m_ocean.json",
-        //         "format": {
-        //             "type": "topojson",
-        //             "feature": "ne_50m_ocean"
-        //         }
-        //     },
-        //     "mark": {
-        //         "type": "geoshape",
-        //         "fill": "#f3fdffff",
-        //     },
-        // },
         {
             "data": {
-                "url": "https://raw.githubusercontent.com/ryanCYJ/Data-Visualisation/refs/heads/main/data/ne_110m_admin_0_countries.json",
+                "url": "https://raw.githubusercontent.com/ryanCYJ/Data-Visualisation/refs/heads/main/data/ne_50m_ocean.json",
                 "format": {
                     "type": "topojson",
-                    "feature": "ne_110m_admin_0_countries"
+                    "feature": "ne_50m_ocean"
+                }
+            },
+            "mark": {
+                "type": "geoshape",
+                "fill": "#f3fdffff",
+            },
+        },
+        {
+            "data": {
+                "url": "https://raw.githubusercontent.com/ryanCYJ/Data-Visualisation/refs/heads/main/data/ne_50m_admin_0_countries.json",
+                "format": {
+                    "type": "topojson",
+                    "feature": "ne_50m_admin_0_countries"
                 }
             },
             "mark": {

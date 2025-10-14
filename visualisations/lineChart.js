@@ -45,22 +45,10 @@ export const lineSpec = {
                 "labelAngle": -90
             }
         },
-        "tooltip": [
-            {
-                "field": "year", "title": "Year", "type": "temporal", "format": "%Y"
-
-            },
-            {
-                "field": "crash_no", "title": "Number of Crashes"
-            },
-            {
-                "field": "rolling_mean_2dp", "title": "Rolling Mean"
-            }
-        ]
     },
     "layer": [
         {
-            "mark": 
+            "mark":
             {
                 "type": "bar",
             },
@@ -70,6 +58,15 @@ export const lineSpec = {
                     "type": "quantitative",
                     "title": "Number of Crashes"
                 },
+                "tooltip": [
+                    {
+                        "field": "year", "title": "Year", "type": "temporal", "format": "%Y"
+
+                    },
+                    {
+                        "field": "crash_no", "title": "Number of Crashes"
+                    }
+                ]
             }
         },
         {
@@ -89,6 +86,15 @@ export const lineSpec = {
                     "type": "quantitative",
                     "title": "5 Year Rolling Mean"
                 },
+                "tooltip": [
+                    {
+                        "field": "year", "title": "Year", "type": "temporal", "format": "%Y"
+
+                    },
+                    {
+                        "field": "rolling_mean_2dp", "title": "Rolling Mean"
+                    }
+                ]
             }
         }
     ]
