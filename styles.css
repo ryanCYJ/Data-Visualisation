@@ -353,15 +353,24 @@ label {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 15px;
   padding: 50px;
+  padding-left: 10px;
 }
 
 .text-emp {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: bold;
 }
 
 .fourth-section {
   background-color: rgb(255, 255, 255, 0.5);
+}
+
+#vg-tooltip-element table tr td.value {
+  max-height: fit-content;
+}
+
+#vg-tooltip-element * {
+  font-family: "Aldrich", sans-serif;
 }
