@@ -60,10 +60,9 @@ const heatmapLeft = {
                     },
                     "tooltip": [
                         { "field": "RowSection", "title": "Section" },
-                        { "field": "RowNumber", "title": "Row" },
                         { "field": "SeatType", "title": "Seat Type" },
                         { "field": "Side", "title": "Side" },
-                        { "field": "SurvivalRateNum", "title": "Survival Rate" }
+                        { "field": "SurvivalRateNum", "title": "Survival Rate (%)" }
                     ]
                 }
             }
@@ -133,10 +132,9 @@ const heatmapRight = {
                     },
                     "tooltip": [
                         { "field": "RowSection", "title": "Section" },
-                        { "field": "RowNumber", "title": "Row" },
                         { "field": "SeatType", "title": "Seat Type" },
                         { "field": "Side", "title": "Side" },
-                        { "field": "SurvivalRateNum", "title": "Survival Rate" }
+                        { "field": "SurvivalRateNum", "title": "Survival Rate (%)" }
                     ]
                 }
             },
